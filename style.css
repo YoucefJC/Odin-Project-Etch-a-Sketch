@@ -1,0 +1,20 @@
+.grid-16-layout {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.grid-row {
+    flex-wrap: nowrap;
+    display: flex;
+    column-gap: 8px;
+}
+
+.grid-box {
+    flex: 1;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    margin: 0;
+}
