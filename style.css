@@ -1,20 +1,43 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .grid-16-layout {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    justify-content: space-between;
     row-gap: 8px;
-}
-
-.grid-row {
-    flex-wrap: nowrap;
-    display: flex;
-    column-gap: 8px;
+    margin: 0 auto;
 }
 
 .grid-box {
-    flex: 1;
-    width: 56px;
     height: 56px;
     border: 0;
     margin: 0;
+    transition: all ease 0.5s;
+    border: 1px solid #0A0A0A;
+}
+
+.input-layout {
+    
+    padding: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-layout button {
+
+    padding: 16px 32px;
+    font-family: inherit;
+    font-weight: 600;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 16px;
+    transition: all ease 0.2s;
+}
+
+.input-layout button:hover {
+
+    background-color: #0A0A0A;
+    color: aquamarine;
 }
