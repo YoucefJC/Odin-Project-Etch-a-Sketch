@@ -10,6 +10,7 @@ setTrail();
 function setGrid(numBoxesPerSide){
 
     let numBoxes = numBoxesPerSide ** 2;
+    let flexBasis = (100 / numBoxesPerSide) + '%';
     let boxWidth = Math.floor((CONTAINER_WIDTH / numBoxesPerSide)) + 'px';
 
     let boxes = [];
@@ -18,8 +19,9 @@ function setGrid(numBoxesPerSide){
         
         let gridBox = document.createElement('div');
         gridBox.classList.add('grid-box');
-        gridBox.style.minWidth = boxWidth;
+        gridBox.style.flexBasis = flexBasis;
         gridBox.style.minHeight = boxWidth;
+        gridBox.setAttribute('opacity', 0.0);
         boxes.push(gridBox);
     }
 
@@ -35,16 +37,31 @@ function setTrail(){
         
         singleBox.addEventListener('mouseover', (event) => {
 
-            event.target.style.backgroundColor = 'aquamarine';
+            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            event.target.style.backgroundColor = '#' + randomColor;
         });
 
         singleBox.addEventListener('mouseout', (event) => {
 
+            let opacity = updateOpacityAttribute(event.target);
+            event.target.setAttribute('opacity', opacity);
+
             setTimeout(() => {
-                event.target.style.backgroundColor = 'transparent';
+                
+                event.target.style.backgroundColor = 'black';
+                event.target.style.opacity = opacity;
             }, 500);
+
+            
         });
     });
+
+    function updateOpacityAttribute(element){
+        
+        let elementOpacity = parseFloat(element.getAttribute('opacity'));
+        let newOpacity = (elementOpacity < 0.9) ? elementOpacity + 0.1 : 1.0;
+        return newOpacity;
+    }
 }
 
 let changeBoxesBtn = document.querySelector('#change-boxes-btn');

@@ -6,15 +6,17 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 8px;
     margin: 0 auto;
 }
 
 .grid-box {
     border: 0;
     margin: 0;
-    transition: all ease 0.5s;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     border: 1px solid #0A0A0A;
+    transition: all ease 0.5s;
 }
 
 .input-layout {
