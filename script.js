@@ -69,5 +69,5 @@ changeBoxesBtn.addEventListener('click', (event) => {
 
     let numberOfBoxes = parseInt(prompt('Please input the number of boxes per side (max 100)'));
     if( numberOfBoxes > 100) numberOfBoxes = 100;
-    setGrid(numberOfBoxes);
+    if( numberOfBoxes ) setGrid(numberOfBoxes);
 });
